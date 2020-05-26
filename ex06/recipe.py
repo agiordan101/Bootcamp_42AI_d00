@@ -21,7 +21,7 @@ def add_recipe(name, ingredients, meal, prep_time):
     cookbook[name] = {
                         "list": ingredients,
                         "meal": meal,
-                        "prep_time": prep_time              
+                        "prep_time": prep_time
                      }
     print("A new recipe has been created.")
     print_recipe(name)
@@ -36,12 +36,15 @@ def print_recipe(name):
     print("Recipe for {}:".format(name))
     print("Ingredients list: {}.".format(cookbook.get(name).get("list")))
     print("To be eaten for {}.".format(cookbook.get(name).get("meal")))
-    print("Takes {} minutes of cooking.".format(cookbook.get(name).get("prep_time")))
+    print("Takes {} minutes of cooking.\
+    ".format(cookbook.get(name).get("prep_time")))
 
 
 def print_all_recipe():
     for cle in cookbook.keys():
         print_recipe(cle)
+        print()
+
 
 exitLoop = False
 while exitLoop is False:
@@ -64,14 +67,14 @@ while exitLoop is False:
         exitLoop = True
     else:
         recipe = input("Please enter the recipe's name: ")
-        #if cookbook.has_key(recipe) is False:
-        #    print("Please enter an existing recipe.")
-        #    exitLoop = True
-        #elif int(answer) == 1:
-        if int(answer) == 1:
+        if int(answer) != 1 and (recipe in cookbook) is False:
+            print("Please enter an existing recipe.")
+            exitLoop = True
+        elif int(answer) == 1:
             ingredients = []
             while len(ingredients) == 0 or ingredients[-1] != "exit":
-                ingredients.append(input("Add a new ingredient ? (Enter exit to stop): "))
+                ingredients.append(input("Add a new ingredient ?\
+ (Enter exit to stop): "))
             del ingredients[-1]
             meal = input("It's a meal for: ")
             prep_time = input("Its preparation times is: ")

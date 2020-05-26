@@ -2,7 +2,8 @@ import sys
 import string
 
 
-if len(sys.argv) < 3 or str.isnumeric(sys.argv[1]) or str.isnumeric(sys.argv[2]) is False or len(sys.argv) > 3:
+if len(sys.argv) < 3 or str.isnumeric(sys.argv[1]) or\
+   str.isnumeric(sys.argv[2]) is False or len(sys.argv) > 3:
     print("ERROR")
 else:
     text = sys.argv[1]

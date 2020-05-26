@@ -1,8 +1,8 @@
 import sys
 
-if (len(sys.argv) != 3 or
-    str.isnumeric(sys.argv[1]) is False or
-    str.isnumeric(sys.argv[2]) is False):
+if len(sys.argv) != 3 or\
+   str.isnumeric(sys.argv[1]) is False or\
+   str.isnumeric(sys.argv[2]) is False:
     if (len(sys.argv) < 3):
         print(end="")
     elif (len(sys.argv) > 3):
